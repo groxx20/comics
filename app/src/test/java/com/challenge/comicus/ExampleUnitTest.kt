@@ -1,4 +1,4 @@
-package com.challenge.comictron
+package com.challenge.comicus
 
 import org.junit.Test
 
