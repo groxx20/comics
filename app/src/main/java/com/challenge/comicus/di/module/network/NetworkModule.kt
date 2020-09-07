@@ -3,6 +3,7 @@ package com.challenge.comicus.di.module.network
 import com.challenge.comicus.BuildConfig
 import com.challenge.comicus.remote.interceptor.HttpErrorInterceptor
 import com.challenge.comicus.remote.interceptor.HttpRequestInterceptor
+import com.challenge.comicus.remote.service.ComicService
 import com.challenge.comicus.utils.constants.ComicAppConstants.DEFAULT_TIMEOUT
 import com.challenge.comicus.utils.constants.ComicAppConstants.FULL_DATE_TIME_FORMAT
 import com.google.gson.Gson
@@ -73,4 +74,9 @@ class NetworkModule {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(client)
             .build()
+
+    @Provides
+    @Singleton
+    fun provideComicService(retrofit: Retrofit): ComicService =
+        retrofit.create(ComicService::class.java)
 }

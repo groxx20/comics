@@ -1,6 +1,7 @@
 package com.challenge.comicus.di.module.comic
 
 import com.challenge.comicus.ui.comic.ComicFragment
+import com.challenge.comicus.ui.comic.SplashFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -10,6 +11,9 @@ import dagger.android.ContributesAndroidInjector
 
 @Module
 abstract class ComicFragmentBindingModule {
+
+    @ContributesAndroidInjector
+    abstract fun bindSplashFragment(): SplashFragment
 
     @ContributesAndroidInjector
     abstract fun bindComicFragment(): ComicFragment
