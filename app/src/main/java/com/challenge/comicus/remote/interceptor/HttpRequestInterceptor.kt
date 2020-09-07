@@ -7,7 +7,7 @@ import okhttp3.Response
  * Created by Pavel on 03/09/2020.
  **/
 
-class HttpRequestInterceptor(): Interceptor {
+class HttpRequestInterceptor: Interceptor {
 
     companion object {
         const val CONTENT_TYPE = "Content-Type"

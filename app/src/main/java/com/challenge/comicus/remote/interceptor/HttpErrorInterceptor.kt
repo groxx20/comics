@@ -8,7 +8,7 @@ import java.net.HttpURLConnection
  * Created by Pavel on 03/09/2020.
  **/
 
-class HttpErrorInterceptor : Interceptor {
+class HttpErrorInterceptor: Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val response = chain.proceed(chain.request())
