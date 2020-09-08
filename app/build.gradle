@@ -4,7 +4,7 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 ext {
-    BASE_URL = "\"http://xkcd.com\""
+    BASE_URL = "\"https://xkcd.com\""
 }
 
 android {
@@ -46,6 +46,7 @@ dependencies {
 
     //arch
     implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle_extensions"
+    implementation "androidx.lifecycle:lifecycle-reactivestreams-ktx:$rootProject.lifecycle_extensions"
     implementation "androidx.navigation:navigation-fragment:$rootProject.navigation_fragment"
     implementation "androidx.room:room-runtime:$rootProject.room_version"
     kapt "androidx.room:room-compiler:$rootProject.room_version"
@@ -58,6 +59,11 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:$rootProject.dagger_version"
     kapt "com.google.dagger:dagger-compiler:$rootProject.dagger_version"
 
+    //rx
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxJava_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rootProject.rxKotlin_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxAndroid_version"
+
     //network
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rootProject.retrofit_version"
@@ -65,6 +71,12 @@ dependencies {
     implementation "com.google.code.gson:gson:$rootProject.gson_version"
     implementation "com.squareup.okhttp3:okhttp:$rootProject.okHttp_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okHttp_version"
+
+    //util
+    implementation "com.jakewharton.timber:timber:$rootProject.timber_version"
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide_version"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glide_version"
+
 
     testImplementation "junit:junit:$rootProject.junit_version"
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidx_test_version_junit"
