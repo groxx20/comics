@@ -14,5 +14,5 @@ interface ComicService {
     fun getLatestComic(): Single<ComicDto>
 
     @GET("{id}/info.0.json")
-    fun getComicById(@Path("id") comicId: Int): Single<ComicDto>
+    fun getComicByNumber(@Path("id") comicId: Int): Single<ComicDto>
 }
