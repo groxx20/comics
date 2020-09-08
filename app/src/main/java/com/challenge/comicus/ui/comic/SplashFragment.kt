@@ -1,6 +1,9 @@
 package com.challenge.comicus.ui.comic
 
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import com.challenge.comicus.R
 import com.challenge.comicus.ui.base.ComicViewModelFactory
 import com.challenge.comicus.utils.extensions.getViewModel
@@ -22,8 +25,15 @@ class SplashFragment : DaggerFragment() {
         viewModelFactory.getViewModel(activity)
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? =
+        inflater.inflate(R.layout.fragment_splash, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         initClickListener()
         fetchLatestComic()
     }

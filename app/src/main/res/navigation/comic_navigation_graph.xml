@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/login_activity_nav_graph"
-    app:startDestination="@id/comicFragment">
+    android:id="@+id/comicActivityNavigationFragment"
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.challenge.comicus.ui.comic.SplashFragment"
-        android:label="SplashFragment" >
+        android:label="SplashFragment"
+        >
         <action
             android:id="@+id/action_splashFragment_to_comicFragment"
-            app:destination="@id/comicFragment" />
+            app:destination="@id/comicFragment"
+            app:popUpTo="@+id/comicActivityNavigationFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
         android:id="@+id/comicFragment"
         android:name="com.challenge.comicus.ui.comic.ComicFragment"
-        android:label="LoginFragment">
+        android:label="ComicFragment">
 
     </fragment>
 
