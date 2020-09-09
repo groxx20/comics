@@ -8,13 +8,13 @@ ext {
 }
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "30.0.0"
 
     defaultConfig {
         applicationId "com.challenge.comictron"
         minSdkVersion 23
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
@@ -77,9 +77,8 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$rootProject.glide_version"
     kapt "com.github.bumptech.glide:compiler:$rootProject.glide_version"
 
-
+    //test
     testImplementation "junit:junit:$rootProject.junit_version"
     androidTestImplementation "androidx.test.ext:junit:$rootProject.androidx_test_version_junit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espresso_core_version"
-
 }
