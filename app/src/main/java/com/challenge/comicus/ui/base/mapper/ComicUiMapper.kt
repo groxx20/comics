@@ -21,7 +21,8 @@ class ComicUiMapper @Inject constructor() : UiMapper<Comic, ComicUi> {
             imgLink = data.imgLink,
             title = data.title,
             safeTitle = data.safeTitle,
-            transcript = data.transcript
+            transcript = data.transcript,
+            favorite = data.favorite
         )
     }
 }

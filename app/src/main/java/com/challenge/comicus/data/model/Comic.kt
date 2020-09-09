@@ -14,5 +14,6 @@ data class Comic(
     val imgLink: String,
     val title: String,
     val safeTitle: String,
-    val transcript: String
+    val transcript: String,
+    var favorite: Boolean
 )

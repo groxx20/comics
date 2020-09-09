@@ -21,7 +21,8 @@ class ComicMapper @Inject constructor() : FromDbMapper<ComicEntity, Comic> {
             imgLink = entity.imgLink,
             title = entity.title,
             safeTitle = entity.safeTitle,
-            transcript = entity.transcript
+            transcript = entity.transcript,
+            favorite = entity.favorite
         )
     }
 }

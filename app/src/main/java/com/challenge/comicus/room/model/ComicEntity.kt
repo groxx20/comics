@@ -21,4 +21,5 @@ data class ComicEntity(
     val title: String,
     val safeTitle: String,
     val transcript: String,
+    var favorite: Boolean
 )
