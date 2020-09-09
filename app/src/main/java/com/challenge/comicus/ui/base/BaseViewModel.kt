@@ -4,6 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.challenge.comicus.remote.interceptor.BaseThrowable
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 import javax.inject.Inject
 
 /**
@@ -20,5 +22,16 @@ open class BaseViewModel @Inject constructor(
 
     fun handleHttpException(httpException: BaseThrowable) {
         _httpException.value = httpException
+    }
+
+    protected val disposables = CompositeDisposable()
+
+    protected fun Disposable.addToDisposables() {
+        disposables.add(this)
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        disposables.clear()
     }
 }

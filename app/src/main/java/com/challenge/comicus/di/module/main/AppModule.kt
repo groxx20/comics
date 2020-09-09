@@ -8,6 +8,7 @@ import com.challenge.comicus.di.annotation.ViewModelKey
 import com.challenge.comicus.di.module.db.DbModule
 import com.challenge.comicus.ui.base.BaseViewModel
 import com.challenge.comicus.ui.base.ComicViewModelFactory
+import com.challenge.comicus.utils.preferences.PreferencesUtil
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoMap
@@ -36,4 +37,8 @@ class AppModule {
     fun provideBaseViewModel(baseViewModel: BaseViewModel): ViewModel {
         return baseViewModel
     }
+
+    @Provides
+    @Singleton
+    fun providePreferences(context: Context): PreferencesUtil = PreferencesUtil(context)
 }

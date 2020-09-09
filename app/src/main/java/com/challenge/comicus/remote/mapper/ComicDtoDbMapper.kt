@@ -17,10 +17,11 @@ class ComicDtoDbMapper @Inject constructor() : FromRemoteMapper<ComicDto, ComicE
             link = dto.link,
             news = dto.news,
             alt = dto.alt,
-            imgLink = dto.link,
+            imgLink = dto.img,
             title = dto.title,
             safeTitle = dto.safeTitle,
-            transcript = dto.transcript
+            transcript = dto.transcript,
+            favorite = false
         )
     }
 }

@@ -1,4 +1,4 @@
-package com.challenge.comicus
+package com.challenge.comicus.application
 
 import com.challenge.comicus.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector

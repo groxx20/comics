@@ -9,6 +9,7 @@ import javax.inject.Provider
  * Created by Pavel on 03/09/2020.
  **/
 
+@Suppress("UNCHECKED_CAST")
 class ComicViewModelFactory @Inject constructor(
     private var creators: Map<Class<out ViewModel>, @JvmSuppressWildcards Provider<ViewModel>>
 ) : ViewModelProvider.Factory {
@@ -30,5 +31,4 @@ class ComicViewModelFactory @Inject constructor(
         creators.entries.firstOrNull {
             modelClass.isAssignableFrom(it.key)
         }?.value
-
 }

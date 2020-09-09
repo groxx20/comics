@@ -1,15 +1,9 @@
-package com.challenge.comicus.room.model
-
-import androidx.room.Entity
-import androidx.room.PrimaryKey
+package com.challenge.comicus.data.model
 
 /**
  * Created by Pavel on 07/09/2020.
  **/
-
-@Entity(tableName = "comic")
-data class ComicEntity(
-    @PrimaryKey
+data class Comic(
     val comicNumber: Int,
     val day:Int,
     val month:Int,
