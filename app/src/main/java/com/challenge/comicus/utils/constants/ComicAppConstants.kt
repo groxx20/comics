@@ -7,4 +7,5 @@ object ComicAppConstants {
 
     const val DEFAULT_TIMEOUT = 10L
     const val FULL_DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH:mm:ss"
+    const val EXPLAIN_URL = "https://www.explainxkcd.com/wiki/index.php/"
 }
