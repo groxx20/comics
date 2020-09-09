@@ -12,7 +12,7 @@ class GetComicUseCase @Inject constructor(
     private val comicMapper: ComicMapper
 ) {
 
-    fun getComicByNumber(number: Int) = comicRepository.getComicByNumber(number)
+    fun getComicById() = comicRepository.getComicById()
         .map(comicMapper::mapFromDb)
 
     fun getLatestComic() = comicRepository.getLatestComic()
