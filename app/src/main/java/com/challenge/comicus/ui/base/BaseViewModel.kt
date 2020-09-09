@@ -30,12 +30,8 @@ open class BaseViewModel @Inject constructor(
         disposables.add(this)
     }
 
-    protected fun clearDisposables() {
-        disposables.clear()
-    }
-
     override fun onCleared() {
-        clearDisposables()
         super.onCleared()
+        disposables.clear()
     }
 }
