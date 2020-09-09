@@ -1,6 +1,7 @@
 package com.challenge.comicus.remote.repository
 
 import com.challenge.comicus.remote.mapper.ComicDtoDbMapper
+import com.challenge.comicus.remote.rx.RxSchedulers
 import com.challenge.comicus.remote.service.ComicService
 import com.challenge.comicus.room.dao.ComicDao
 import com.challenge.comicus.room.model.ComicEntity
@@ -17,7 +18,8 @@ class ComicRepository @Inject constructor(
     private val comicDao: ComicDao,
     private val comicDtoDbMapper: ComicDtoDbMapper,
     private val comicService: ComicService,
-    private val preferencesUtil: PreferencesUtil
+    private val preferencesUtil: PreferencesUtil,
+    private val rxSchedulers: RxSchedulers
 ) {
 
     companion object {
@@ -27,17 +29,17 @@ class ComicRepository @Inject constructor(
 
     fun getComicById(): Flowable<ComicEntity> =
         comicDao.getById(preferencesUtil.getInt(CURRENT_COMIC_NUM, 0))
-            .subscribeOn(Schedulers.single())
+            .subscribeOn(rxSchedulers.dbIO)
 
     fun getLatestComic(): Flowable<ComicEntity> =
         comicDao.getLatestComic()
-            .subscribeOn(Schedulers.single())
+            .subscribeOn(rxSchedulers.dbIO)
 
     fun requestRandomComic(randomId: Int): Completable {
         return comicService.getRandomComic(randomId)
             .map(comicDtoDbMapper::mapFromRemote)
             .flatMapCompletable(comicDao::insert)
-            .subscribeOn(Schedulers.io())
+            .subscribeOn(rxSchedulers.networkIO)
     }
 
     fun requestLatestComic(): Completable =
@@ -47,5 +49,5 @@ class ComicRepository @Inject constructor(
                 comicDtoDbMapper.mapFromRemote(it)
             }
             .flatMapCompletable(comicDao::insert)
-            .subscribeOn(Schedulers.io())
+            .subscribeOn(rxSchedulers.networkIO)
 }
