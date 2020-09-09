@@ -1,7 +1,7 @@
 package com.challenge.comicus.di.module.comic
 
 import com.challenge.comicus.ui.comic.ComicFragment
-import com.challenge.comicus.ui.comic.SplashFragment
+import com.challenge.comicus.ui.splash.SplashFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

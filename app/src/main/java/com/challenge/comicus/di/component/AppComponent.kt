@@ -1,7 +1,7 @@
 package com.challenge.comicus.di.component
 
 import android.app.Application
-import com.challenge.comicus.ComicApplication
+import com.challenge.comicus.application.ComicApplication
 import com.challenge.comicus.di.module.main.ActivityBindingModule
 import com.challenge.comicus.di.module.main.AppModule
 import com.challenge.comicus.di.module.network.NetworkModule
