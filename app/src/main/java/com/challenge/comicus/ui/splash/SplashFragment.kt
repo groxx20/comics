@@ -1,4 +1,4 @@
-package com.challenge.comicus.ui.comic
+package com.challenge.comicus.ui.splash
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.challenge.comicus.R
 import com.challenge.comicus.ui.base.ComicViewModelFactory
+import com.challenge.comicus.ui.comic.ComicViewModel
 import com.challenge.comicus.utils.extensions.getViewModel
 import com.challenge.comicus.utils.extensions.navigate
 import dagger.android.support.DaggerFragment
