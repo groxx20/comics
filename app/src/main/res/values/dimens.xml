@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--  padding -->
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
+    <dimen name="padding_24">24dp</dimen>
+
+
+    <!-- Text size -->
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_22">22sp</dimen>
+
+    <!--  Buttons section  -->
+    <dimen name="buttons_section_elevation">2dp</dimen>
+    <dimen name="buttons_section_height">100dp</dimen>
+    <dimen name="section_icon_size">32dp</dimen>
+
+    <!--  Progress bar  -->
+    <dimen name="progress_bar_height">52dp</dimen>
+
+</resources>

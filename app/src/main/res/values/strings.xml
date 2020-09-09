@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Comicus</string>
+
+    <string name="favorite">Favorite</string>
+    <string name="random">Random</string>
+    <string name="explain">Explain</string>
 </resources>
