@@ -5,6 +5,7 @@ import com.challenge.comicus.application.ComicApplication
 import com.challenge.comicus.di.module.main.ActivityBindingModule
 import com.challenge.comicus.di.module.main.AppModule
 import com.challenge.comicus.di.module.network.NetworkModule
+import com.challenge.comicus.di.module.rx.RxSchedulersModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -16,12 +17,15 @@ import javax.inject.Singleton
  **/
 
 @Singleton
-@Component(modules = [
-    AndroidInjectionModule::class,
-    ActivityBindingModule::class,
-    AppModule::class,
-    NetworkModule::class
-])
+@Component(
+    modules = [
+        AndroidInjectionModule::class,
+        ActivityBindingModule::class,
+        AppModule::class,
+        NetworkModule::class,
+        RxSchedulersModule::class
+    ]
+)
 interface AppComponent : AndroidInjector<ComicApplication> {
 
     override fun inject(application: ComicApplication)
