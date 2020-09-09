@@ -16,7 +16,7 @@ abstract class ComicDao {
     abstract fun getById(comicNum: Int): Flowable<ComicEntity>
 
     @Query("SELECT * FROM comic WHERE comicNumber = (SELECT MAX(comicNumber) FROM comic)")
-    abstract fun getLatestComic() : Flowable<ComicEntity>
+    abstract fun getLatestComic(): Flowable<ComicEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract fun insert(comic: ComicEntity): Completable
