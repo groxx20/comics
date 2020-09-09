@@ -1,6 +1,5 @@
-package com.challenge.comicus.di.module.rx
+package com.challenge.comicus.remote.rx
 
-import com.challenge.comicus.remote.rx.RxSchedulers
 import io.reactivex.schedulers.Schedulers
 
 /**

@@ -1,6 +1,6 @@
 package com.challenge.comicus.repository
 
-import com.challenge.comicus.di.module.rx.TestSchedulers
+import com.challenge.comicus.remote.rx.TestSchedulers
 import com.challenge.comicus.remote.mapper.ComicDtoDbMapper
 import com.challenge.comicus.remote.model.ComicDto
 import com.challenge.comicus.remote.repository.ComicRepository
@@ -16,8 +16,6 @@ import io.mockk.mockk
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single
-import io.reactivex.observers.TestObserver
-import io.reactivex.schedulers.TestScheduler
 import org.junit.Before
 import org.junit.Test
 
